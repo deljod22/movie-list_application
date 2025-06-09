@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, {constructor} from 'axios';
 
 const api = axios.create({
     baseURL: 'https://api.themoviedb.org/3',
@@ -9,5 +9,6 @@ const api = axios.create({
 
 export const getPopularMovies = async () => {
     const response = await api.get('/movie/popular');
+    console.log(response);
     return response.data.results;
 };
